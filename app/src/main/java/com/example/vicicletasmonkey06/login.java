@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class login extends AppCompatActivity {
@@ -32,9 +33,14 @@ public class login extends AppCompatActivity {
         String password = editTextPassword.getText().toString();
         String email = editTextEmail.getText().toString();
 
-        // Aquí deberías implementar la lógica para verificar las credenciales
-        // Supongamos que tienes una función para verificar las credenciales
-        if (isValidCredentials(username, password, email)) {
+        // Obtener los datos del usuario guardados en SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("userData", MODE_PRIVATE);
+        String savedUsername = sharedPreferences.getString("username", "");
+        String savedPassword = sharedPreferences.getString("password", "");
+        String savedEmail = sharedPreferences.getString("email", "");
+
+        // Verificar si los datos ingresados coinciden con los datos guardados
+        if (username.equals(savedUsername) && password.equals(savedPassword) && email.equals(savedEmail)) {
             // Credenciales válidas, redirige al usuario a la pantalla principal
             Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
             // Aquí puedes abrir la pantalla principal de tu aplicación u otra actividad relevante
@@ -46,6 +52,7 @@ public class login extends AppCompatActivity {
             Toast.makeText(this, "Nombre de usuario, contraseña o correo electrónico incorrectos", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     private void openRegistration() {
         // Inicia la actividad MainActivity para el registro de usuario

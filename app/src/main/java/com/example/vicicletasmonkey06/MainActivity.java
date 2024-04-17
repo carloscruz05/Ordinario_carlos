@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -30,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void registerUser() {
-        // Obtener los valores de los EditText
         String username = editTextUsername.getText().toString();
         String password = editTextPassword.getText().toString();
         String email = editTextEmail.getText().toString();
@@ -45,7 +45,13 @@ public class MainActivity extends AppCompatActivity {
         // Mostrar un mensaje de registro exitoso
         Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
 
-        // Cerrar la actividad actual y volver a la pantalla de inicio de sesión
+        // Abrir la pantalla de inicio de sesión
+        Intent intent = new Intent(this, login.class);
+        startActivity(intent);
+
+        // Cerrar la actividad actual
         finish();
     }
+
+
 }
