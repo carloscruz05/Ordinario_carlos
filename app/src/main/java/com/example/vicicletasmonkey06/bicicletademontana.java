@@ -21,21 +21,21 @@ public class bicicletademontana extends AppCompatActivity {
         buttonBasica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abrirDeportiva(R.drawable.deportivabasica, "Azul", "$1,000");
+                abrirDeportiva(R.drawable.deportivabasica, "comoda al andar", "$1,000");
             }
         });
 
         buttonIntermedia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abrirDeportiva(R.drawable.deportivaintermidia, "Negro", "$2,000");
+                abrirDeportiva(R.drawable.deportivaintermidia, "facil de manejar", "$2,000");
             }
         });
 
         buttonPremium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abrirDeportiva(R.drawable.deportivapremiun, "Morado", "$3,000");
+                abrirDeportiva(R.drawable.deportivapremiun, "el confort en ruedas", "$3,000");
             }
         });
     }

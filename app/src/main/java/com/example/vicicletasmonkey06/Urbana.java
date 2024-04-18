@@ -56,9 +56,13 @@ public class Urbana extends AppCompatActivity {
         });
 
 
-        // Configurar el botón para pagar (por implementar)
         pagarButton.setOnClickListener(v -> {
-            // Código para realizar el pago
+            Intent pagarIntent = new Intent(Urbana.this, PagarActivity.class);
+            pagarIntent.putExtra("cantidadProductos", cantidadProductos);
+            pagarIntent.putExtra("montoTotal", costoUnitario * cantidadProductos);
+            startActivity(pagarIntent);
         });
+
+
     }
 }

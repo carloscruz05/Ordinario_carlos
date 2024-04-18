@@ -21,21 +21,21 @@ public class bicicletaurbana extends AppCompatActivity {
         buttonBasica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abrirDeportiva(R.drawable.deportivabasica, "Azul", "$1,000");
+                abrirDeportiva(R.drawable.deportivabasica, "hecha para las calles", "$1,000");
             }
         });
 
         buttonIntermedia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abrirDeportiva(R.drawable.deportivaintermidia, "Negro", "$2,000");
+                abrirDeportiva(R.drawable.deportivaintermidia, "facil manejo", "$2,000");
             }
         });
 
         buttonPremium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                abrirDeportiva(R.drawable.deportivapremiun, "Morado", "$3,000");
+                abrirDeportiva(R.drawable.deportivapremiun, "duradera ", "$3,000");
             }
         });
     }
