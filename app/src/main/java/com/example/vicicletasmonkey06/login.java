@@ -45,30 +45,23 @@ public class login extends AppCompatActivity {
         String password = editTextPassword.getText().toString();
         String email = editTextEmail.getText().toString();
 
+        SharedPreferences sharedPreferences = getSharedPreferences("userData", MODE_PRIVATE);
+        String storedUsername = sharedPreferences.getString("username", "");
+        String storedPassword = sharedPreferences.getString("password", "");
+        String storedEmail = sharedPreferences.getString("email", "");
 
-
-        if (isValidCredentials(username, password, email)) {
-
+        if (username.equals(storedUsername) && password.equals(storedPassword) && email.equals(storedEmail)) {
             Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(login.this, menu.class);
             startActivity(intent);
         } else {
-
             Toast.makeText(this, "Nombre de usuario, contraseña o correo electrónico incorrectos", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void openRegistration() {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
-
-    private boolean isValidCredentials(String username, String password, String email) {
-        // Este es solo un ejemplo básico, debes implementar tu propia lógica aquí
-        // Aquí podrías comparar las credenciales con datos almacenados en SharedPreferences o una base de datos
-        // Por ahora, simplemente verifica si los campos no están vacíos
-        return !username.isEmpty() && !password.isEmpty() && !email.isEmpty();
-    }
 }
+
