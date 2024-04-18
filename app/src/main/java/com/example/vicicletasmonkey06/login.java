@@ -45,28 +45,26 @@ public class login extends AppCompatActivity {
         String password = editTextPassword.getText().toString();
         String email = editTextEmail.getText().toString();
 
-        // Aquí deberías implementar la lógica para verificar las credenciales
-        // Puedes comparar las credenciales con datos almacenados en SharedPreferences o una base de datos
 
-        // Por ahora, este es solo un ejemplo básico
+
         if (isValidCredentials(username, password, email)) {
-            // Credenciales válidas, redirige al usuario al menú
+
             Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(login.this, menu.class);
             startActivity(intent);
         } else {
-            // Credenciales inválidas, muestra un mensaje de error
+
             Toast.makeText(this, "Nombre de usuario, contraseña o correo electrónico incorrectos", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void openRegistration() {
-        // Inicia la actividad MainActivity para el registro de usuario
+
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    // Método para verificar las credenciales (solo un ejemplo básico)
+
     private boolean isValidCredentials(String username, String password, String email) {
         // Este es solo un ejemplo básico, debes implementar tu propia lógica aquí
         // Aquí podrías comparar las credenciales con datos almacenados en SharedPreferences o una base de datos

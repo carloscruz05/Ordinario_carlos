@@ -25,40 +25,40 @@ public class deportiva extends AppCompatActivity {
         Button regresarMenuButtonDeportiva = findViewById(R.id.regresarMenuButtonDeportiva);
         Button pagarButtonDeportiva = findViewById(R.id.pagarButtonDeportiva);
 
-        // Obtener los datos pasados desde la actividad anterior
+
         Intent intent = getIntent();
         if (intent != null) {
             int imagen = intent.getIntExtra("imagen", 0);
             String descripcionColor = intent.getStringExtra("descripcionColor");
             String costo = intent.getStringExtra("costo");
 
-            // Configurar los elementos de la pantalla con los datos recibidos
+
             imageViewDeportiva.setImageResource(imagen);
             descripcionTextViewDeportiva.setText("Descripción: " + descripcionColor);
-            costoUnitario = Integer.parseInt(costo.replaceAll("[^\\d.]", "")); // Extraer el costo numérico
+            costoUnitario = Integer.parseInt(costo.replaceAll("[^\\d.]", ""));
             costoTextViewDeportiva.setText("Costo: " + costo);
         }
 
-        // Configurar el botón para regresar al menú
+
         regresarMenuButtonDeportiva.setOnClickListener(v -> {
             Intent menuIntent = new Intent(deportiva.this, menu.class);
             startActivity(menuIntent);
         });
 
-        // Configurar el botón para agregar más producto
+
         agregarProductoButtonDeportiva.setOnClickListener(v -> {
             cantidadProductos++;
-            int costoTotal = costoUnitario * cantidadProductos; // Calcular el costo total sumando el costo unitario por la cantidad de productos
-            // Actualizar el texto del botón para mostrar la cantidad de productos agregados
+            int costoTotal = costoUnitario * cantidadProductos;
+
             agregarProductoButtonDeportiva.setText("Agregar más producto (" + cantidadProductos + ")");
-            // Actualizar el texto del costo total
+
             costoTextViewDeportiva.setText("Costo: $" + costoTotal);
         });
 
 
-        // Configurar el botón para pagar (por implementar)
+
         pagarButtonDeportiva.setOnClickListener(v -> {
-            // Código para realizar el pago
+
         });
     }
 }

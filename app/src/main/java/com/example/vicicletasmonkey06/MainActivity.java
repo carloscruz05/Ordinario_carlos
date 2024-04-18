@@ -35,21 +35,21 @@ public class MainActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString();
         String email = editTextEmail.getText().toString();
 
-        // Guardar los datos del usuario en SharedPreferences
+
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("username", username);
         editor.putString("password", password);
         editor.putString("email", email);
         editor.apply();
 
-        // Mostrar un mensaje de registro exitoso
+
         Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
 
-        // Abrir la pantalla de inicio de sesión
+
         Intent intent = new Intent(this, login.class);
         startActivity(intent);
 
-        // Cerrar la actividad actual
+
         finish();
     }
 
