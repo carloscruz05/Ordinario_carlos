@@ -26,6 +26,7 @@ public class menu extends AppCompatActivity {
 
         Button buttonBicicletaDeportiva = findViewById(R.id.button1);
         Button buttonBicicletaUrbana = findViewById(R.id.button2);
+        Button buttonBicicletaMontana = findViewById(R.id.button3); // Nuevo botón para bicicleta de montaña
 
         buttonBicicletaDeportiva.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +40,14 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(menu.this, bicicletaurbana.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonBicicletaMontana.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(menu.this, bicicletademontana.class);
                 startActivity(intent);
             }
         });
